@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  backend:
+    build:
+      context: .
+      target: builder
+    depends_on:
+      - database
+    ports:
+      - '6500:6500'
+    environment:
+      NODE_ENV: local
+      PORT: 6500
+      DATABASE_URL: mongodb://mongodb:mongodb@database:27017/city_cruise?authMechanism=DEFAULT&authSource=admin
+    volumes:
+      - ./src:/home/app/src
+
+  database:
+    image: mongo:5.0.16
+    command: --quiet
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongodb
+      MONGO_INITDB_ROOT_PASSWORD: mongodb
+    # logging:
+    #   driver: none
+    ports:
+      - '27018:27017'

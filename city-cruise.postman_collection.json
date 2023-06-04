@@ -1,0 +1,350 @@
+{
+	"info": {
+		"_postman_id": "f8d12b45-f527-41d2-90e3-2f99929d89e6",
+		"name": "city-cruise",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5858440"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{{admin}}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/signup",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // rider\r\n    // \"email\": \"johnrider@email.com\",\r\n    // admin\r\n    // \"email\": \"johnadmin@email.com\",\r\n    // user\r\n    \"email\": \"johndoe@email.com\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/signin",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "getAllUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/all",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "rides",
+			"item": [
+				{
+					"name": "addRide",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"brand\": \"Toyota\",\r\n    \"model\": \"Camry\",\r\n    \"color\": \"Black\",\r\n    \"year\": 2005\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/rides/add",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"rides",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateRideStatus",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"647c8b554555136dc31f480b\",\r\n    \"status\": \"approved\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/rides/status",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"rides",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateRide",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"647c8b554555136dc31f480b\",\r\n   \"isOnline\": true,\r\n   \"location\": {\r\n       \"lat\": 51.509865,\r\n       \"long\": -0.118092\r\n   }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/rides/update",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"rides",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ridesNearMe",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"location\": {\r\n       \"lat\": 51.5074,\r\n       \"long\": -0.1278\r\n   }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/rides/find",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"rides",
+								"find"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "getUserInfo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/info",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"info"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "trips",
+			"item": [
+				{
+					"name": "requestNewTrip",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"location\": {\r\n       \"lat\": 51.5074,\r\n       \"long\": -0.1278\r\n   },\r\n    \"destination\": {\r\n       \"lat\": 55.5074,\r\n       \"long\": -0.1278\r\n   },\r\n   \"ride\": \"647c8b554555136dc31f480b\",\r\n   \"paymentMode\": \"cash\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/trips/create",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"trips",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateTrip",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"id\": \"647ca63bd0d0de0a26207496\",\r\n    \"destination\": {\r\n       \"lat\": 52.5074,\r\n       \"long\": -0.1278\r\n   },\r\n   \"status\": \"accepted\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/trips/update",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"trips",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTrips",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/trips/user",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"trips",
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:6500/api/v1",
+			"type": "string"
+		},
+		{
+			"key": "rider",
+			"value": "{\n    \"firstName\": \"John\",\n    \"lastName\": \"Rider\",\n    \"email\": \"johnrider@email.com\",\n    \"mobile\": \"080300000000\",\n    \"password\": \"password\",\n    \"address\": \"No 5 Addr stree, Lagos. Nigeria\",\n    \"isRider\": true\n}",
+			"type": "string"
+		},
+		{
+			"key": "user",
+			"value": "{\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"email\": \"johndoe@email.com\",\n    \"mobile\": \"080300000000\",\n    \"password\": \"password\",\n    \"address\": \"No 5 Addr stree, Lagos. Nigeria\",\n    \"isRider\": false\n}",
+			"type": "string"
+		},
+		{
+			"key": "admin",
+			"value": "{\n    \"firstName\": \"John\",\n    \"lastName\": \"Admin\",\n    \"email\": \"johnadmin@email.com\",\n    \"mobile\": \"080300000000\",\n    \"password\": \"password\",\n    \"address\": \"No 5 Addr stree, Lagos. Nigeria\",\n    \"isRider\": false\n}",
+			"type": "string"
+		}
+	]
+}

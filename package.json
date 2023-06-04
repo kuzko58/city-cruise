@@ -1,0 +1,29 @@
+{
+  "name": "city-cruise",
+  "version": "1.0.0",
+  "description": "An API for booking rides",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start:dev": "nodemon src/main.js",
+    "start:prod": "node src/main.js",
+    "format": "prettier --write \"src/**/*.js\""
+  },
+  "author": "Chisom Amaechi",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.1.3",
+    "express": "^4.18.2",
+    "joi": "^17.9.2",
+    "jose": "^4.14.4",
+    "mongoose": "^7.2.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22",
+    "prettier": "^2.8.8"
+  }
+}
