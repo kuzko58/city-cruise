@@ -6,8 +6,9 @@ $ yarn start:prod
 
 ### Requirements
 
-Node >= 14
-Internet connection
+$ Node >= 14
+
+$ Internet connection
 
 ### Running the app wth docker
 
