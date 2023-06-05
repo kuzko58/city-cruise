@@ -3,7 +3,7 @@ services:
   backend:
     build:
       context: .
-      target: builder
+      target: final
     depends_on:
       - database
     ports:
